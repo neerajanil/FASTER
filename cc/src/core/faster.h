@@ -4486,8 +4486,8 @@ void FasterKv<K, V, D, H, OH>::AutoCompactHlog() {
 
     // perform log compaction
     log_info("Auto-compaction: [%lu %lu] -> [%lu %lu] {%lu}",
-             begin_address, hlog.GetTailAddress(),
-             until_address, hlog.GetTailAddress(), Size());
+             begin_address, hlog.GetTailAddress().control(),
+             until_address, hlog.GetTailAddress().control(), Size());
     StartSession();
     bool success = CompactWithLookup(until_address, true, hlog_compaction_config_.num_threads);
     StopSession();
