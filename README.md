@@ -1,12 +1,9 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/microsoft/FASTER/main/docs/assets/images/faster-logo.png" alt="FASTER logo" width="600px" />
-</p>
-  
-[![NuGet](https://img.shields.io/nuget/v/Microsoft.FASTER.Core.svg)](https://www.nuget.org/packages/Microsoft.FASTER.Core/)
-[![Build Status](https://dev.azure.com/ms/FASTER/_apis/build/status/Microsoft.FASTER?branchName=main)](https://dev.azure.com/ms/FASTER/_build/latest?definitionId=8&branchName=main)
-[![Gitter](https://badges.gitter.im/Microsoft/FASTER.svg)](https://gitter.im/Microsoft/FASTER?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-
 # Introduction
+
+This repo is a fork of https://github.com/microsoft/FASTER. The purpose of this for is to build FASTER c++ with the zig build system and make it available as an importable zig package so it can be used by the zig build system when building other projects. The repo DOES NOT contain zig language compatible bindings.
+
+
+# What is FASTER?
 
 Managing large application state easily, resiliently, and with high performance is one of the hardest
 problems in the cloud today. The FASTER project offers two artifacts to help tackle this problem.
@@ -25,16 +22,24 @@ workloads. Start learning about FASTER, its unique capabilities, and how to get 
 
 [aka.ms/FASTER](https://aka.ms/FASTER)
 
-# Contributing
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.microsoft.com.
 
-When you submit a pull request, a CLA-bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+# Build
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+## System Dependencies
+The library depends on the following system libraries
+- uuid
+- aio
+- tbb
+
+If on Ubuntu 24.04 the following commands were needed to setup env for build
+
+- sudo apt-get install uuid-dev
+- sudo apt-get install libaio1t64 libaio-dev
+- sudo apt install libtbb-dev
+
+## Build System
+The build system used is `zig` version `0.15.1`. Download from https://ziglang.org/download/ and add to path.
+
+## Build Command
+`zig build`
