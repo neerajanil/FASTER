@@ -21,6 +21,7 @@ pub fn build(b: *std.Build) !void {
     faster_lib.linkLibCpp();
     faster_lib.linkSystemLibrary("uuid");
     faster_lib.linkSystemLibrary("tbb");
+    faster_lib.linkSystemLibrary("aio");
     faster_lib.installHeadersDirectory(b.path("cc/src/"), "", .{});
 
     b.installArtifact(faster_lib);
