@@ -5,7 +5,7 @@ pub fn build(b: *std.Build) !void {
     const optimize = b.standardOptimizeOption(.{});
 
     const faster_lib = b.addLibrary(.{
-        .name = "faster",
+        .name = "fastercpp",
         .linkage = .static,
         .root_module = b.createModule(.{
             .target = target,

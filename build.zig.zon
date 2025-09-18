@@ -1,5 +1,5 @@
 .{
-    .name = .faster,
+    .name = .fastercpp,
     .version = "2.6.5",
     .minimum_zig_version = "0.15.1",
     .fingerprint = 0x47ce53156a4fd814,
